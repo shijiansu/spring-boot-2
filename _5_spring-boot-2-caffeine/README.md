@@ -1,10 +1,10 @@
 # Update for original examples
 
+- need to be careful of cache manager and how to load the caches, and double validate that if the cache exists or not
 - provide new examples of beforeInvocat
 - provide new examples of @CachePut
 - provide new examples of @Caching
 - provide new examples of @Cacheable in annotation
-- provide new examples of CacheManager
 
 # Setup Maven wrapper
 

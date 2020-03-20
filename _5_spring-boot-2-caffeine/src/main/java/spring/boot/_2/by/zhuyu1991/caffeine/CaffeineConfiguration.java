@@ -32,7 +32,8 @@ public class CaffeineConfiguration {
     private int maxSize = DEFAULT_MAXSIZE;
   }
 
-  // CaffeineCacheManager is more on providing global setting for cache
+  // CaffeineCacheManager is more on providing global setting for cache, and not fexible
+  // So using the SimpleCacheManager with cache objects
   @Bean
   // @Primary
   public CacheManager caffeineCacheManager() {
@@ -53,26 +54,4 @@ public class CaffeineConfiguration {
             .collect(Collectors.toList()));
     return cacheManager;
   }
-  //
-  //  @Bean
-  //  public CaffeineCache getUserByIdCache() {
-  //    return new CaffeineCache(
-  //        GET_USER_BY_ID,
-  //        Caffeine.newBuilder()
-  //            .recordStats()
-  //            .expireAfterAccess(1, TimeUnit.MINUTES)
-  //            .maximumSize(10000)
-  //            .build());
-  //  }
-  //
-  //  @Bean
-  //  public CaffeineCache listUsersCache() {
-  //    return new CaffeineCache(
-  //        LIST_USERS,
-  //        Caffeine.newBuilder()
-  //            .recordStats()
-  //            .expireAfterAccess(720, TimeUnit.MINUTES)
-  //            .maximumSize(100)
-  //            .build());
-  //  }
 }
