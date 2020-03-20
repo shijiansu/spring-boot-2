@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>su.shijian</groupId>
-  <artifactId>spring-boot-2-hikaricp</artifactId>
+  <artifactId>_1_spring-boot-2-hikaricp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <parent>
-    <groupId>_1_org.springframework.boot</groupId>
+    <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.2.5.RELEASE</version>
     <relativePath/>
