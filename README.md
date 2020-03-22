@@ -9,8 +9,8 @@
 
 - _1_spring-boot-2-hikaricp - examples of hikaricp, embedded database (h2), JPA
 - _2_spring-boot-2-mongodb - examples of mongodb, MongoTemplate
-- _3_spring-boot-2-redis-redisson - examples of redisson, embedded redis, docker redis, StringRedisTemplate
-- _4_spring-boot-2-rabbitmq - examples of rabbitmq, embbeded amqp (apid, broker), docker rabbitmq, AmqpTemplate, @RabbitListener
+- _3_spring-boot-2-redis-redisson - examples of redisson, embedded redis, redis docker, StringRedisTemplate
+- _4_spring-boot-2-rabbitmq - examples of rabbitmq, embbeded amqp (apid, broker), rabbitmq docker, AmqpTemplate, @RabbitListener
 - _5_spring-boot-2-caffeine - examples of caffeine cache, cache manger, @EnableCaching
 
 --------------------------------------------------------------------------------

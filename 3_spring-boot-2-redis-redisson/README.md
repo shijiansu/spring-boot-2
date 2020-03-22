@@ -7,7 +7,7 @@
   - https://github.com/redisson/redisson
   - https://blog.csdn.net/zhuyu19911016520/article/details/80418161
 - introduce of embedded redis - https://github.com/ozimov/embedded-redis
-- introduce of docker redis - refer to stack.yml
+- introduce of redis docker - refer to stack.yml
 
 # Setup Maven wrapper
 
@@ -40,5 +40,3 @@
 
 - 大概有三种：1.基于关系型数据库，2.基于缓存，3基于zookeeper
 - 大部分网站使用的是基于缓存的，有更好的性能，而缓存一般是以集群方式部署，保证了高可用性
-
-## 基于缓存redis，使用开源 redisson 实现分布式锁
