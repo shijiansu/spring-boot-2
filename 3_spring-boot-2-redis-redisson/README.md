@@ -1,4 +1,3 @@
-
 # Update for original examples
 
 - provide new examples of StringRedisTemplate
@@ -8,6 +7,10 @@
   - https://blog.csdn.net/zhuyu19911016520/article/details/80418161
 - introduce of embedded redis - https://github.com/ozimov/embedded-redis
 - introduce of redis docker - refer to stack.yml
+
+# Java development environment
+
+`sdk list java && sdk current java`
 
 # Setup Maven wrapper
 

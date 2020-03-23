@@ -6,6 +6,10 @@
 
 - https://stackoverflow.com/questions/41210688/multiple-rabbitmq-queues-with-spring-boot
 
+# Java development environment
+
+`sdk list java && sdk current java`
+
 # Setup Maven wrapper
 
 - https://github.com/takari/maven-wrapper

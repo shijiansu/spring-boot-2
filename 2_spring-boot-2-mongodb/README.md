@@ -3,6 +3,10 @@
 
 - http://localhost:8081/
 
+# Java development environment
+
+`sdk list java && sdk current java`
+
 # Setup Maven wrapper
 
 - https://github.com/takari/maven-wrapper

@@ -6,6 +6,10 @@
 - provide new examples of @Caching
 - provide new examples of @Cacheable in annotation
 
+# Java development environment
+
+`sdk list java && sdk current java`
+
 # Setup Maven wrapper
 
 - https://github.com/takari/maven-wrapper
