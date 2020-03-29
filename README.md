@@ -1,7 +1,14 @@
 ![](https://img.shields.io/badge/language-java-blue)
 ![](https://img.shields.io/badge/technology-springboot2-blue)
 ![](https://img.shields.io/badge/development%20year-2020-orange)
+![](https://img.shields.io/badge/contributor-shijiansu-purple)
 ![](https://img.shields.io/badge/license-MIT-lightgrey)
+
+![](https://img.shields.io/github/languages/top/shijiansu/spring-boot-2-advanced-by-zhuyu1991)
+![](https://img.shields.io/github/languages/count/shijiansu/spring-boot-2-advanced-by-zhuyu1991)
+![](https://img.shields.io/github/languages/code-size/shijiansu/spring-boot-2-advanced-by-zhuyu1991)
+![](https://img.shields.io/github/repo-size/shijiansu/spring-boot-2-advanced-by-zhuyu1991)
+![](https://img.shields.io/github/last-commit/shijiansu/spring-boot-2-advanced-by-zhuyu1991?color=red)
 
 - https://blog.csdn.net/zhuyu19911016520/category_7401304.html
 
