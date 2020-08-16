@@ -30,6 +30,6 @@ if [[ -f pom.xml ]]; then
 elif [[ -f build.gradle ]]; then
   LIB_FOLDER="libs/" # gradle project
 else
-  LIB_FOLDER="" # deafult case
+  LIB_FOLDER="" # default
 fi
 export LIB_FOLDER
