@@ -51,7 +51,7 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
 
   class ErrorResponse {
     public ErrorResponse(String message, List<String> details) {
-      super();
+
       this.message = message;
       this.details = details;
     }

@@ -34,7 +34,7 @@ public class ApplicationExceptionHandler {
   class ErrorResponse {
 
     public ErrorResponse(String message, List<String> details) {
-      super();
+
       this.message = message;
       this.details = details;
     }
