@@ -20,10 +20,10 @@ kill -9 ${PID}
 ## kill -9 $(lsof -nP -iTCP:8080 | grep LISTEN | cut -d' ' -f5)
 
 # start customer microservice
-mvn -f customer/pom.xml spring-boot:run
+./mvnw -f customer/pom.xml spring-boot:run
 
 # start customer-notification microservice
-mvn -f customer-notification/pom.xml spring-boot:run
+./mvnw -f customer-notification/pom.xml spring-boot:run
 
 # testing data
 curl -H 'Accept: application/json' -H 'Content-type: application/json' \
@@ -33,10 +33,10 @@ curl -H 'Accept: application/json' -H 'Content-type: application/json' \
 # log
 ## curl
 {"id":8,"name":"tester","email":"tester@google.com"}
-## customer
+## customer service
 Ready to send message but suppressed tester@google.com
 ## rabbitmq - no log
-## customer-notification
+## customer-notification service
 tester@google.com
 ## fake smtp
 11 Aug 2020 15:55:01 DEBUG org.subethamail.smtp.server.Session - Client: MAIL FROM:<shijiansu@sjh>
@@ -45,4 +45,4 @@ tester@google.com
 11 Aug 2020 15:55:01 DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
 
 # clean up
-Ctrl + c
+ctrl + c
