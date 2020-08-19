@@ -1,7 +1,7 @@
 # Update for original examples
 
-- provide new examples of StringRedisTemplate
-- provide new examples of without the distributed lock
+- provide new example of StringRedisTemplate
+- provide new example of without the distributed lock
 - redisson
   - https://github.com/redisson/redisson
   - https://blog.csdn.net/zhuyu19911016520/article/details/80418161
@@ -20,12 +20,12 @@
 
 # Script step by step
 
-```shell script
+```bash
 ./mvnw clean spring-boot:run
 ```
 
 # One stop script
-```shell script
+```bash
 /bin/bash run.sh
 /bin/bash run-test.sh
 /bin/bash run-stop.sh

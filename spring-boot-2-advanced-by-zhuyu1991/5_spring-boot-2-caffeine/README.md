@@ -1,10 +1,10 @@
 # Update for original examples
 
 - need to be careful of cache manager and how to load the caches, and double validate that if the cache exists or not
-- provide new examples of beforeInvocat
-- provide new examples of @CachePut
-- provide new examples of @Caching
-- provide new examples of @Cacheable in annotation
+- provide new example of beforeInvocat
+- provide new example of @CachePut
+- provide new example of @Caching
+- provide new example of @Cacheable in annotation
 
 # Java development environment
 
@@ -18,12 +18,12 @@
 
 # Script step by step
 
-```shell script
+```bash
 ./mvnw clean spring-boot:run
 ```
 
 # One stop script
-```shell script
+```bash
 /bin/bash run.sh
 /bin/bash run-test.sh
 /bin/bash run-stop.sh
