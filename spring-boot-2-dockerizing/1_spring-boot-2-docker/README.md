@@ -1,24 +1,47 @@
+# How to start
 
-- https://spring.io/guides/gs/spring-boot-docker/
-- https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin
+- Following the Spring article
+  - <https://spring.io/guides/gs/spring-boot-docker/>
+  - <https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin>
 
 # Automation scripts
 
-```shell script
-run-test.sh # test for application
-run.sh # springboot run for application through Idea
-run-jar.sh # springboot run for application through jar
-run-stop.sh # stop for application
+```bash
+env.sh # environment setup for this example
+env-commons.sh # a show case for both maven and gradle application
 
-run-package.sh # package artifact and prepare for classes 
-run-docker-build.sh # build to local image
-run-docker-build-by-plugin.sh # build to local image by plugin
-run-docker-build-test.sh # test docker build
-run-docker-push-by-plugin.sh # push to docker hub by plugin using local credential
+# application
+run-test.sh # test spring boot application
+run.sh # run spring boot application
+run-application-jar.sh # run spring boot application via jar; production way to alternate run.sh
+run-stop.sh # stop spring boot application
 
-run-docker.sh # start docker
-run-docker-debug.sh # start docker with java debug - Idea -> Run -> Edit Configurations -> Remote
-run-docker-stop.sh # stop docker
+# build
+run-package.sh # package artifact and prepare for classes files
+run-docker-build.sh # build docker image
+run-docker-build-test.sh # build docker image build
+
+# plugin
+run-docker-build-by-plugin.sh # build docker image
+run-docker-push-by-plugin.sh # directly push to docker hub using local credential
+
+# docker
+run-docker.sh # start docker container
+run-docker-debug.sh # start docker with java debug enabling - Idea -> Run -> Edit Configurations -> Remote
+run-docker-stop.sh # stop docker container
+```
+
+# Architecture
+
+```bash
+run-docker-build.sh # or, run-docker-build-by-plugin.sh
+|- run-package.sh
+# then
+run-docker-build-test.sh
+# then
+run-docker.sh # or, run-docker-debug.sh
+# then
+run-docker-stop.sh
 ```
 
 # Java development environment
@@ -33,6 +56,6 @@ run-docker-stop.sh # stop docker
 
 # Script step by step
 
-```shell script
+```bash
 ./mvnw clean spring-boot:run
 ```

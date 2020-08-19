@@ -1,27 +1,48 @@
+# How to start
 
-- https://github.com/spotify/dockerfile-maven
-- https://github.com/spotify/dockerfile-maven/blob/master/docs/usage.md
+- <https://github.com/spotify/dockerfile-maven>
+- <https://github.com/spotify/dockerfile-maven/blob/master/docs/usage.md>
 
 Build each layer into docker image
 
 # Automation scripts
 
-```shell script
-run-test.sh # test for application
-run.sh # springboot run for application through Idea
-run-stop.sh # stop for application
+```bash
+env.sh # environment setup for this example
 
-run-package.sh # package artifact and prepare for classes 
-run-docker-build-by-plugin.sh # build to local image by plugin
-run-docker-build-test.sh # test docker build
+# application
+run-test.sh # test spring boot application
+run.sh # run spring boot application
+run-stop.sh # stop spring boot application
 
-run-docker.sh # start docker
-run-docker-debug.sh # start docker with java debug - Idea -> Run -> Edit Configurations -> Remote
-run-docker-stop.sh # stop docker
+# build
+run-package.sh # package artifact and prepare for classes files
+run-docker-build-test.sh # build docker image build
+
+# plugin
+run-docker-build-by-plugin.sh # build docker image
+
+# docker
+run-docker.sh # start docker container
+run-docker-debug.sh # start docker with java debug enabling - Idea -> Run -> Edit Configurations -> Remote
+run-docker-stop.sh # stop docker container
 
 # dockerfile:build	Builds a Docker image from a Dockerfile.
 # dockerfile:tag	Tags a Docker image.
 # dockerfile:push	Pushes a Docker image to a repository.
+```
+
+# Architecture
+
+```bash
+run-docker-build-by-plugin.sh
+|- run-package.sh
+# then
+run-docker-build-test.sh
+# then
+run-docker.sh # or, run-docker-debug.sh
+# then
+run-docker-stop.sh
 ```
 
 # Java development environment
@@ -36,13 +57,13 @@ run-docker-stop.sh # stop docker
 
 # Script step by step
 
-```shell script
+```bash
 ./mvnw clean spring-boot:run
 ```
 
 # One stop script
 
-```shell script
+```bash
 /bin/bash run.sh
 /bin/bash run-test.sh
 /bin/bash run-stop.sh
