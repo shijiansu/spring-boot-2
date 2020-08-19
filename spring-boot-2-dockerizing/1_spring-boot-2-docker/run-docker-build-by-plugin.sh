@@ -4,7 +4,8 @@ if ! /bin/bash run-package.sh; then
 fi
 source env.sh
 # https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin
-./mvnw com.google.cloud.tools:jib-maven-plugin:dockerBuild -Dimage="$IMAGE_NAME" \
+./mvnw com.google.cloud.tools:jib-maven-plugin:dockerBuild \
+  -Dimage="$IMAGE_NAME" \
   -Djib.container.environment=DEPENDENCY="$PACKAGE_FOLDER/dependency" \
   -Djib.container.creationTime="$(date +%Y-%m-%dT%H:%M:%S)+08:00"
 ## default to take Base image 'gcr.io/distroless/java:8'
