@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function _check_ports {
-  p=$(lsof -i :8083 -i :8082 -i :8080 -i :8081 -i :8001)
+  p=$(lsof -i :8083 -i :8082 -i :8081 -i :8080 -i :8001)
   echo "Checking ports if available"
   echo "${p}"
   if [[ -n "${p}" ]]; then
