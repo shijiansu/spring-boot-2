@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,6 +23,15 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 @Slf4j
 public class BrownFieldSiteController {
+  @Value("${microservice.book.hostname:localhost}")
+  String bookHostname;
+
+  @Value("${microservice.search.hostname:localhost}")
+  String searchHostname;
+
+  @Value("${microservice.checkin.hostname:localhost}")
+  String checkinHostname;
+
   RestTemplate searchClient = new RestTemplate();
 
   RestTemplate bookingClient = new RestTemplate();
@@ -43,7 +53,9 @@ public class BrownFieldSiteController {
   public String greetingSubmit(@ModelAttribute UIData uiData, Model model) {
     Flight[] flights =
         searchClient.postForObject(
-            "http://localhost:8083/search/get", uiData.getSearchQuery(), Flight[].class);
+            "http://" + searchHostname + ":8083/search/get",
+            uiData.getSearchQuery(),
+            Flight[].class);
     uiData.setFlights(Arrays.asList(flights));
     model.addAttribute("uidata", uiData);
     return "result";
@@ -87,7 +99,8 @@ public class BrownFieldSiteController {
     long bookingId = 0;
     try {
       bookingId =
-          bookingClient.postForObject("http://localhost:8080/booking/create", booking, long.class);
+          bookingClient.postForObject(
+              "http://" + bookHostname + ":8080/booking/create", booking, long.class);
       log.info("Booking created {}", bookingId);
     } catch (Exception e) {
       log.error("BOOKING SERVICE NOT AVAILABLE...!!!");
@@ -108,7 +121,8 @@ public class BrownFieldSiteController {
   public String searchBookingSubmit(@ModelAttribute UIData uiData, Model model) {
     long id = Long.parseLong(uiData.getBookingid());
     BookingRecord booking =
-        bookingClient.getForObject("http://localhost:8080/booking/get/" + id, BookingRecord.class);
+        bookingClient.getForObject(
+            "http://" + bookHostname + ":8080/booking/get/" + id, BookingRecord.class);
 
     if (booking != null) {
       Flight flight =
@@ -150,7 +164,8 @@ public class BrownFieldSiteController {
             firstName, lastName, "28C", null, flightDate, flightDate, Long.parseLong(bookingid));
 
     long checkinId =
-        checkInClient.postForObject("http://localhost:8081/checkin/create", checkIn, long.class);
+        checkInClient.postForObject(
+            "http://" + checkinHostname + ":8081/checkin/create", checkIn, long.class);
     model.addAttribute("message", "Checked In, Seat Number is 28c , checkin id is " + checkinId);
     return "checkinconfirm";
   }

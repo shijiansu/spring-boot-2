@@ -9,8 +9,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -19,14 +21,15 @@ import reactor.core.publisher.Mono;
 @Component
 @Slf4j
 public class BookingComponent {
-  private static final String FareURL = "http://localhost:8082";
+  @Value("${microservice.fare.hostname:localhost}")
+  String faresHostname;
 
   BookingRepository bookingRepository;
   InventoryRepository inventoryRepository;
 
   // @Autowired
   //	private RestTemplate restTemplate;
-  private WebClient webClient;
+  WebClient webClient;
 
   Sender sender;
 
@@ -35,9 +38,14 @@ public class BookingComponent {
       BookingRepository bookingRepository, Sender sender, InventoryRepository inventoryRepository) {
     this.bookingRepository = bookingRepository;
     // this.restTemplate = new RestTemplate();
-    this.webClient = WebClient.create(FareURL);
     this.sender = sender;
     this.inventoryRepository = inventoryRepository;
+  }
+
+  @PostConstruct
+  public void init(){
+    // faresHostname cannot be loaded before the this class constructor
+    this.webClient = WebClient.create("http://" + faresHostname + ":8082");
   }
 
   public long book(BookingRecord record) {

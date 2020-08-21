@@ -4,7 +4,6 @@ import com.brownfield.pss.book.component.BookingComponent;
 import com.brownfield.pss.book.entity.BookingRecord;
 import com.brownfield.pss.book.entity.Inventory;
 import com.brownfield.pss.book.entity.Passenger;
-import com.brownfield.pss.book.repository.BookingRepository;
 import com.brownfield.pss.book.repository.InventoryRepository;
 import java.util.Arrays;
 import java.util.Date;
@@ -19,9 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @Slf4j
 public class Application implements CommandLineRunner {
-  @Autowired private BookingRepository bookingRepository;
-
-  @Autowired private BookingComponent bookingComponent;
+  @Autowired BookingComponent bookingComponent;
 
   @Autowired InventoryRepository inventoryRepository;
 
@@ -31,7 +28,6 @@ public class Application implements CommandLineRunner {
 
   @Override
   public void run(String... strings) {
-
     Inventory[] invs = {
       new Inventory("BF100", "22-JAN-18", 100),
       new Inventory("BF101", "22-JAN-18", 100),
@@ -47,7 +43,6 @@ public class Application implements CommandLineRunner {
         new BookingRecord("BF101", "NYC", "SFO", "22-JAN-18", new Date(), "101");
     Set<Passenger> passengers = new HashSet<>();
     passengers.add(new Passenger("Gean", "Franc", "Male", booking));
-    //	passengers.add(new Passenger("Redi","Ivan","Female",booking));
 
     booking.setPassengers(passengers);
     long record = bookingComponent.book(booking);
