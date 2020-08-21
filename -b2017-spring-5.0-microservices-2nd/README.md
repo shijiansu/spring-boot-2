@@ -2,24 +2,6 @@
 
 - <https://github.com/PacktPublishing/Spring-5.0-Microservices-Second-Edition>
 
-# TODO
-
-- ch3_2
-  - Few updates from the book examples
-    - Need to update the security/oauth2 solutions
-    - Need to update the actuator solutions
-    - Spring Data REST HAL Browser is deprecated! Prefer the HAL Explorer (artifactId: spring-data-rest-hal-explorer)!
-    - Swagger UI does not work
-
-- ch3_1_hello-world-service-groovy
-- ch3_2_greeting-restful-service
-  - RESTful API
-  - HATEOAS
-  - Swagger
-- ch3_2_greeting-webflux-service
-- ch3_2_greeting-messaging-service
-- ch3_2_greeting-security-service - examples of simplest basic authentication as default
-
 # Key table of Contents
 
 - Demystifying Microservices
@@ -326,5 +308,3 @@ a number of key questions need to be answered from the transition point of view.
 - Handling of reference data in the new system
 - Testing strategy to ensure the business capabilities are intact and correctly reproduced
 - Identification of any prerequisites for microservice development, such as microservices capabilities, frameworks, processes, and more
-
-

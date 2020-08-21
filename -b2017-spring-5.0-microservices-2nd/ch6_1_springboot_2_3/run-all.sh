@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# check port to see if there are running applications
 function _check_ports {
   p=$(lsof -i :8083 -i :8082 -i :8081 -i :8080 -i :8001)
   echo "Checking ports if available"
@@ -10,11 +11,14 @@ function _check_ports {
   fi
 }
 
+# remove the log if exists
 function _remove_log {
   local application=${1}
   [[ -f "_log/${application}.log" ]] && rm "_log/${application}.log"
 }
 
+# check rabbitmq running status, here uses the log as indicating;
+# it could use rabbitmq management api also, refer to "book/docker/docker-entrypoint.sh"
 function _check_rabbitmq_status {
   local container_status=${1}
   local log=${2}
@@ -37,6 +41,7 @@ function _check_rabbitmq_status {
   done
 }
 
+# check springboot application running status
 function _check_spring_boot_status {
   local application=${1}
   local log="${2}"
@@ -56,6 +61,7 @@ function _check_spring_boot_status {
   done
 }
 
+# run springboot application
 function run_spring_boot {
   local application=${1}
   local log="_log/${application}.log"
@@ -64,8 +70,7 @@ function run_spring_boot {
   _check_spring_boot_status "${application}" "${log}"
 }
 
-# if use docker compose, it can use "depends on" to ensure application is up
-
+# [START]
 # ports are available
 _check_ports
 
@@ -91,3 +96,4 @@ run_spring_boot "checkin" # 8081
 run_spring_boot "website" # 8001
 
 open http://localhost:8001
+# [END]
