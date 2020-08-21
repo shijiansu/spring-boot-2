@@ -2,9 +2,11 @@ version: "3.8"
 services:
   springboot2-docker:
     image: shijian/springboot2-docker:latest
-    hostname: springboot2-docker
-    ports:
-      - "8080:8080"
+    container_name: springboot2-docker # can ping by container name; default is folder+image name
+    hostname: springboot2-docker # can ping by hostname; default is random value
+    # internal for "springboot2-docker-client" only
+#    ports:
+#      - "8080:8080"
     networks:
       - springboot2-docker-network
     # for swarm mode
@@ -18,6 +20,7 @@ services:
 
   springboot2-docker-client:
     image: shijian/springboot2-docker-client:latest
+    container_name: springboot2-docker-client
     hostname: springboot2-docker-client
     ports:
       - "8081:8081"
@@ -38,3 +41,4 @@ services:
 
 networks:
   springboot2-docker-network:
+    name: springboot2-docker-network

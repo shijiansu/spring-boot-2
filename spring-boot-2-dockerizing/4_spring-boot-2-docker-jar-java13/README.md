@@ -11,20 +11,33 @@ run-docker-stop.sh # stop docker container
 run-docker-all.sh # start docker containers <- module - Dockerfile
 run-docker-all-stop.sh # stop docker containers <- module - Dockerfile
 
+run-docker-build-all.sh # build docker images
+
 run-docker-compose.sh # start docker compose <- docker-compose.yml
 run-docker-compose-down.sh # stop docker compose <- docker-compose.yml
 
+run-test-all.sh # test apis
+
 run-cleanup-all.sh # clean up all testing resources in this example
+```
+
+# Testing
+
+```bash
+run-docker-compose.sh
+docker logs springboot2-docker-client
+docker exec -it springboot2-docker-client /bin/sh # /bin/sh for alpine
+ping springboot2-docker
 ```
 
 # Architecture
 
 ```bash
-# manully run - run as application - because needs manually stop
+# 1 - manully run - run as application - because needs manually stop
 springboot2-docker/run.sh
 springboot2-docker-client/run.sh
 
-# run as container
+# 2 - run as container
 run-docker-all.sh
 |-springboot2-docker
   |-run-docker-build.sh
@@ -33,13 +46,18 @@ run-docker-all.sh
   |-run-docker-build.sh
   |-run-docker.sh
 
-# run as container - docker compose
+# 3 - run as container - docker compose
 run-docker-compose.sh
-|-springboot2-docker
-  |-run-docker-build.sh
-|-springboot2-docker-client
-  |-run-docker-build.sh
+|- run-docker-build-all.sh
+  |-springboot2-docker/run-docker-build.sh
+  |-springboot2-docker-client/run-docker-build.sh
 |-docker-compose.yml
+|- run-test-all.sh
+
+# clean all resources
+run-cleanup-all.sh
+|- run-docker-all-stop.sh
+|- run-docker-compose-down.sh
 ```
 
 # Run as application
