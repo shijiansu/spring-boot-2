@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Run SMTP server - the dependency of customer-notification microservice
 ## download - FakeSMTP http://nilhcem.com/FakeSMTP/
 ## git clone https://github.com/Nilhcem/FakeSMTP.git
