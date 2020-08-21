@@ -2,6 +2,11 @@
 
 This example tries to build and run the simplest docker container for spring boot application.
 
+```bash
+open http://localhost:8080/actuator/health
+curl http://localhost:8080/actuator/health
+```
+
 # Java development environment
 
 `sdk list java && sdk current java`

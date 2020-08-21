@@ -2,6 +2,11 @@
 
 This example to call the "springboot2-docker" service and test the connectivity between containers.
 
+```bash
+open http://localhost:8081/actuator/health
+curl http://localhost:8081/actuator/health
+```
+
 # Java development environment
 
 `sdk list java && sdk current java`
