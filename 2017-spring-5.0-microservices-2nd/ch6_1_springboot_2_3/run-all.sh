@@ -2,6 +2,7 @@
 
 # check port to see if there are running applications
 function _check_ports {
+  local p
   p=$(lsof -i :8083 -i :8082 -i :8081 -i :8080 -i :8001)
   echo "Checking ports if available"
   echo "${p}"
@@ -66,7 +67,7 @@ function run_spring_boot {
   local application=${1}
   local log="_log/${application}.log"
   mvn -f "${application}"/pom.xml clean spring-boot:run > "${log}" &
-  echo $! >> run.pid
+  echo $! >> run.pid # use this file to keep all pid so that later can stop them
   _check_spring_boot_status "${application}" "${log}"
 }
 

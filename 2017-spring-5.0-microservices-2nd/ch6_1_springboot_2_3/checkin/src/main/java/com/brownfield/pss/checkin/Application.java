@@ -24,7 +24,7 @@ public class Application implements CommandLineRunner {
         new CheckInRecord("Franc", "Gean", "28A", new Date(), "BF101", "22-JAN-18", 1);
 
     CheckInRecord result = repository.save(record);
-    log.info("checked in successfully ..." + result);
+    log.info("Checked in successfully ..." + result);
 
     log.info("Looking to load checkedIn record...");
     log.info("Result: " + repository.findById(result.getId()));

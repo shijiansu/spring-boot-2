@@ -26,10 +26,10 @@ public class CheckinComponent {
 
     // save
     long id = checkinRepository.save(checkIn).getId();
-    log.info("Successfully saved checkin ");
+    log.info("successfully saved checkin ");
 
     // send a message back to booking to update status
-    log.info("Sending booking id " + id);
+    log.info("sending booking id " + id);
     sender.send(id);
     return id;
   }

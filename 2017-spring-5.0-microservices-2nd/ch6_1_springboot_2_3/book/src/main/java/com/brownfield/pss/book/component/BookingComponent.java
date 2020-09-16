@@ -27,8 +27,7 @@ public class BookingComponent {
   BookingRepository bookingRepository;
   InventoryRepository inventoryRepository;
 
-  // @Autowired
-  //	private RestTemplate restTemplate;
+  // RestTemplate restTemplate;
   WebClient webClient;
 
   Sender sender;
@@ -49,12 +48,12 @@ public class BookingComponent {
   }
 
   public long book(BookingRecord record) {
-    log.info("calling fares to get fare");
+    log.info("Calling fares to get fare");
     // call fares to get fare
     validateFareReactively(record);
 
     // check fare
-    log.info("calling inventory to get inventory");
+    log.info("Calling inventory to get inventory");
 
     // check inventory
     Inventory inventory =
@@ -63,13 +62,13 @@ public class BookingComponent {
     if (!inventory.isAvailable(record.getPassengers().size())) {
       throw new BookingException("No more seats available");
     }
-    log.info("successfully checked inventory {}", inventory);
-    log.info("calling inventory to update inventory");
+    log.info("Successfully checked inventory {}", inventory);
+    log.info("Calling inventory to update inventory");
 
     // update inventory
     inventory.setAvailable(inventory.getAvailable() - record.getPassengers().size());
     inventoryRepository.saveAndFlush(inventory);
-    log.info("successfully updated inventory");
+    log.info("Successfully updated inventory");
 
     // save booking
     record.setStatus(BookingStatus.BOOKING_CONFIRMED);
@@ -80,7 +79,7 @@ public class BookingComponent {
     log.info("Successfully saved booking {}", id);
 
     // send a message to search to update inventory
-    log.info("sending a booking event");
+    log.info("Sending a booking event");
     Map<String, Object> bookingDetails = new HashMap<>();
     bookingDetails.put("FLIGHT_NUMBER", record.getFlightNumber());
     bookingDetails.put("FLIGHT_DATE", record.getFlightDate());
@@ -88,7 +87,7 @@ public class BookingComponent {
 
     sender.send(bookingDetails);
 
-    log.info("booking event successfully delivered {}", bookingDetails);
+    log.info("Booking event successfully delivered {}", bookingDetails);
     return id;
   }
 
@@ -122,7 +121,7 @@ public class BookingComponent {
   }
 
   private void checkFare(String requestedFare, String actualFare) {
-    log.info("calling fares to get fare (reactively collected) {}", actualFare);
+    log.info("Calling fares to get fare (reactively collected) {}", actualFare);
     if (!requestedFare.equals(actualFare)) throw new BookingException("Fare is tampered");
   }
 }
