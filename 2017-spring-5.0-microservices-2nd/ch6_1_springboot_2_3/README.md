@@ -1,10 +1,10 @@
 # Architecture
 
 ```bash
-# 1 - manually run the microservice one by one
+# Solution 1 - manually run the microservice one by one
 run-manually.sh
 
-# 2 - run applications in localhost
+# Solution 2 - run applications in localhost
 ## check if sets of microservices ports are occupied before trigger to start
 ## write log into _log logging file while booting the microservices
 ## write processor PID into run.pid after booted the microservices
@@ -24,10 +24,10 @@ run-all-stop.sh
 ![](image/1-run-applications-in-localhost.png)
 
 ```bash
-# 3 - run as container - docker compose
+# Solution 3 - run as container - docker compose
 run-docker-compose.sh
 |- run-docker-build.sh
-}- docker-compose.yml
+|- docker-compose.yml
 run-docker-compose-down.sh
 
 ## runtime
@@ -37,7 +37,7 @@ docker-compose -> container -> docker-entrypoint.sh -> java -jar -> SpringBoot2 
 ![](image/2-run-as-container-docker-compose.png)
 
 ```bash
-# 4 - run as container - docker compose with gateway
+# Solution 4 - run as container - docker compose with gateway
 run-docker-compose-gateway.sh
 |- run-docker-build.sh
 |- docker-compose-gateway.yml
