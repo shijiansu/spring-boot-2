@@ -42,7 +42,7 @@
     - Development, production parity
     - Externalizing logs
     - Package admin processes
-  - Serverless computing
+  - Serverless computing (Serverless computing architecture or Functions as a Service (FaaS))
   - Lambda architecture
   - DevOps, Cloud, and Containers
     - DevOps as the practice and process for microservices
@@ -308,3 +308,11 @@ a number of key questions need to be answered from the transition point of view.
 - Handling of reference data in the new system
 - Testing strategy to ensure the business capabilities are intact and correctly reproduced
 - Identification of any prerequisites for microservice development, such as microservices capabilities, frameworks, processes, and more
+
+# Docker Swarm
+
+Docker Swarm works with the concept of manager and nodes. The manager is the single point for administrations to interact and schedule the Docker containers for execution. The nodes are where the Docker containers are deployed and run.
+
+# Kubernetes
+
+Kubernetes architecture has the concept of master, nodes, and pods. The master and nodes together are called a Kubernetes cluster. The master node is responsible for allocating and managing the workload across a number of nodes. Nodes are nothing but a VM or a physical machine. Nodes are further subsegmented as pods. A node can host multiple pods. One or more containers are grouped and executed inside a pod.
