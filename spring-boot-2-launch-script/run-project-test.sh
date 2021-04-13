@@ -1,9 +1,6 @@
 #!/bin/bash
-
-# update note
 # v0.0.3 - 20210411 - update run-project-test.sh, and make execution recurly
 
-# utilities to print with prefix
 function logp() {
   echo "[PROJECT TEST] ${1}"
 }
@@ -69,7 +66,7 @@ function project_test() {
     ## ${CURRENT_DIR##*/}: only take sub string after the last /
     # printf "%-80s   SUCCESS: %2d   FAILED: %2d\n" "${CURRENT_DIR##*/}" ${succ} ${failed} >> "${repo_test_report}"
     ## [20210411]
-    local ROOT_PROJECT="shijian-all-in-one"
+    local ROOT_PROJECT="${__30IT_GIT_ROOT}"
     local NAME_INDEX=$(awk -v a="${CURRENT_DIR}" -v b="${ROOT_PROJECT}" 'BEGIN{print index(a,b)}')
     NAME_INDEX=$(( NAME_INDEX + ${#ROOT_PROJECT} + 1 )) # remove till 1st sub folder in ${ROOT_PROJECT}
     local NAME=$(echo "${CURRENT_DIR}" | cut -c ${NAME_INDEX}-)

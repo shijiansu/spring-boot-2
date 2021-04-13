@@ -1,14 +1,6 @@
 #!/bin/bash
-
-# update note
 # v0.0.3 - 20210411 - update run-project-test.sh, and make execution recurly
 
-# [START] Debug only
-# bash run-repo-test.sh >> /dev/null
-# set -x
-# [END] Debug only
-
-# utilities to print with prefix
 function log() {
   echo "[REPO TEST] ${1}"
 }
@@ -49,14 +41,19 @@ log ""
 test_report="/tmp/repo-test-report-${BASEDIR##*/}-$(date "+%s")"
 touch "${test_report}"
 
-# for multiple projects
-for d in *; do
-  if [[ -d "${d}" ]]; then
-    cd "${d}" || exit
-    project_test_recurly "${test_report}"
-    cd "${BASEDIR}" || exit
-  fi
-done
+# for single project
+if [[ -f "run-project-test.sh" ]]; then
+  project_test_recurly "${test_report}"
+else
+  # for multiple projects
+  for d in *; do
+    if [[ -d "${d}" ]]; then
+      cd "${d}" || exit
+      project_test_recurly "${test_report}"
+      cd "${BASEDIR}" || exit
+    fi
+  done
+fi
 
 # read lines from test report
 echo "-------------------------------------------------------------------------------------------------------------------------"
