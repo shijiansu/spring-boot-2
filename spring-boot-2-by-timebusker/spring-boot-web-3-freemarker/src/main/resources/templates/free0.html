@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h3>${username}</h3>
+<#assign var="使用assign指令你可以创建一个新的变量，或者替换一个已经存在的变量"/>
+<font>${var}</font>
+<hr coloe="red" size="10">
+
+<h2>字符串</h2>
+<h3>字符串常用内建函数</h3>
+<ul>
+  <#assign a='hello'/>
+  <#assign b='world!'/>
+  <li>连接: <font color="red">${a+b}</font></li>
+  <li>截取:<font color="blue">${(a+b)?substring(5,8)}</font></li>
+  <li>长度:<font color="red">${(a+b)?length}</font></li>
+  <li>大写:<font color="blue">${(a+b)?upper_case}</font></li>
+  <li>小写:<font color="red">${(a+b)?lower_case}</font></li>
+  <li>index_of:<font color="blue">${(a+b)?index_of('w')}</font></li>
+  <li>replace:<font color="red">${(a+b)?replace('o','abc')}</font></li>
+  <li>last_index_of:<font color="blue">${(a+b)?last_index_of('o')}</font></li>
+</ul>
+</body>
+</html>

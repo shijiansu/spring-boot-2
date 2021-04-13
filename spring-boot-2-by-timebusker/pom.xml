@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>su.shijian</groupId>
+  <artifactId>spring-boot</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>spring-boot-2-by-timebusker</name>
+
+  <modules>
+    <module>spring-boot-core-1-schedule</module>
+    <module>spring-boot-core-2-async</module>
+    <module>spring-boot-core-3-aop</module>
+    <module>spring-boot-core-4-defining-starter</module>
+    <module>spring-boot-web-1-quickstart</module>
+    <module>spring-boot-web-2-restful</module>
+    <module>spring-boot-web-3-freemarker</module>
+    <module>spring-boot-web-4-swagger2</module>
+    <module>spring-boot-web-5-monitor-actuator</module>
+  </modules>
+</project>
