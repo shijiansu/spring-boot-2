@@ -1,0 +1,22 @@
+{
+  "employee_list": [
+    {
+      "id": 1,
+      "first_name": "Lokesh",
+      "last_name": "Gupta",
+      "email": "howtodoinjava@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Alex",
+      "last_name": "Kolenchiskey",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "David",
+      "last_name": "Kameron",
+      "email": "titanic@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+@startuml
+Client -> AsyncController: get addresses, names, phones
+
+AsyncController -> EmploeeController: get addresses
+EmploeeController -> EmploeeController: get addresses
+AsyncController <-- EmploeeController
+AsyncController -> AsyncController: simulate process
+
+AsyncController -> EmploeeController: get names
+EmploeeController -> EmploeeController: get names
+AsyncController <-- EmploeeController
+AsyncController -> AsyncController: simulate process
+
+AsyncController -> EmploeeController: get phones
+EmploeeController -> EmploeeController: get phones
+AsyncController <-- EmploeeController
+AsyncController -> AsyncController: simulate process
+
+Client <-- AsyncController
+@enduml
