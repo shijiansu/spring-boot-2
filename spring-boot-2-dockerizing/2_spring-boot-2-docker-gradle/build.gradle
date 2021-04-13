@@ -1,0 +1,51 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'maven-publish'
+    id 'idea'
+    // https://github.com/GoogleContainerTools/jib/tree/master/jib-gradle-plugin#quickstart
+    id 'com.google.cloud.tools.jib' version '2.1.0'
+}
+
+group = 'su.shijian'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' // exclude junit4
+    }
+    compileOnly 'org.projectlombok:lombok'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) { // how to publish the artifact and pom.xml
+            artifactId = rootProject.name
+            from components.java
+        }
+    }
+}
+
+test {
+    useJUnitPlatform() // junit5
+}
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
