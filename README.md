@@ -1,42 +1,18 @@
+# spring-boot-2
+
 ![](https://img.shields.io/badge/language-java-blue)
 ![](https://img.shields.io/badge/technology-spring%20boot-blue)
 ![](https://img.shields.io/badge/development%20year-2020-orange)
-![](https://img.shields.io/badge/contributor-shijian%20su-purple)
-![](https://img.shields.io/badge/license-MIT-lightgrey)
 
-![](https://img.shields.io/github/languages/top/shijiansu/spring-boot)
-![](https://img.shields.io/github/languages/count/shijiansu/spring-boot)
-![](https://img.shields.io/github/languages/code-size/shijiansu/spring-boot)
-![](https://img.shields.io/github/repo-size/shijiansu/spring-boot)
-![](https://img.shields.io/github/last-commit/shijiansu/spring-boot?color=red)
-![](https://github.com/shijiansu/spring-boot/workflows/ci%20build/badge.svg)
+![](https://img.shields.io/github/languages/top/shijiansu/spring-boot-2)
+![](https://img.shields.io/github/languages/count/shijiansu/spring-boot-2)
+![](https://img.shields.io/github/languages/code-size/shijiansu/spring-boot-2)
+![](https://img.shields.io/github/repo-size/shijiansu/spring-boot-2)
+![](https://img.shields.io/github/last-commit/shijiansu/spring-boot-2?color=red)
 
---------------------------------------------------------------------------------
+## Outline
 
-# Table of Contents
-
-## 2017-spring-5.0-microservices-2nd
-
-- ch3_1_hello-world-service-groovy - example of Groovy
-- ch3_2_greeting-restful-service - RESTFul API, HATEOAS, Swagger
-- ch3_2_greeting-webflux-service
-- ch3_2_greeting-messaging-service
-- ch3_2_greeting-security-service - example of the simplest basic authentication as default
-- ch3_2 - Few TODO from the book examples
-  - Need to update the security/oauth2 solutions
-  - Need to update the actuator solutions
-  - Spring Data REST HAL Browser is deprecated! Prefer the HAL Explorer (artifactId: spring-data-rest-hal-explorer)!
-  - Swagger UI is not working
-- ch3_3_springboot_2_0 - example of SpringBoot2, RESTFul APIs, RabbitMQ, email sending, FakeSMTP, Docker
-- ch6_1_springboot_2_3 - example of SpringBoot2, RESTFul APIs, WebFlux, RabbitMQ, Microservices, Docker, Dockerfile, Docker wait for dependencies, Docker Compose, Docker Network, Nginx (reverse proxy)
-  - book - SpringBoot2
-  - checkin - SpringBoot2
-  - fares - SpringBoot2
-  - search - SpringBoot2
-  - website - SpringBoot2 + Thymeleaf
-  - microservice-gateway - Nginx
-
-## spring-boot-2-advanced-by-zhuyu1991
+### spring-boot-2-advanced-by-zhuyu1991
 
 - 1_spring-boot-2-hikaricp - example of Hikaricp, embedded database (H2), JPA
 - 2_spring-boot-2-mongodb - example of MongoDB, MongoTemplate
@@ -44,7 +20,7 @@
 - 4_spring-boot-2-rabbitmq - example of RabbitMQ, embedded AMQP (apid, broker), RabbitMQ Docker, AmqpTemplate, @RabbitListener
 - 5_spring-boot-2-caffeine - example of Caffeine cache, cache manger, @EnableCaching
 
-## spring-boot-2-by-timebusker
+### spring-boot-2-by-timebusker
 
 - spring-boot-core-1-schedule - examples of
 - spring-boot-core-2-async - examples of
@@ -66,7 +42,8 @@
 - spring-boot-web-4-swagger2 - examples of
 - spring-boot-web-5-monitor-actuator - examples of
 - spring-boot-web-6-spring-security - examples of
-## spring-boot-2-dockerizing
+
+### spring-boot-2-dockerizing
 
 - 1_spring-boot-2-docker
   - 1, 2, 3 are similar examples, but with different tools and plugins
@@ -81,7 +58,7 @@
   - springboot2-docker - very simple microservice demo with SpringBoot2
   - springboot2-docker-client - very simple microservice demo with SpringBoot2, call API to springboot2-docker
 
-## spring-boot-2-reactive-by-liukang
+### spring-boot-2-reactive-by-liukang
 
 - 1_reactive-web-and-data
   - _1_reactive - example of Reactive, Reactive Stream, lambda, Reactor3
@@ -100,7 +77,7 @@
   - _6_cold_vs_hot - example of cold and hot sequences
 - 4_docker_event_in_action - example of docker event client (docker-java) + docker event (docker run)
 
-## spring-boot-2-reactive-by-stackabuse
+### spring-boot-2-reactive-by-stackabuse
 
 - 1_reactive-webflux - example of WebFlux, server send event
 - 2_reactive-route - example of routing, RouterFunction, ServerRequest, ServerResponse
@@ -108,7 +85,7 @@
 - 4_reactive-webclient - example of WebClient, SpringBoot test, reactor test, Given-When-Then unit test
 - 5_reactive-mongodb - example of reactive data (MongoDB), Spring data, MongoDB Docker
 
-## spring-boot-2-rest-api-by-howtodoinjava
+### spring-boot-2-rest-api-by-howtodoinjava
 
 - 1_rest-api - example of the RESTFul API, i18n, Unit Test (Mockito) for DAO, Integration Test (SpringBootTest)
 - 2_rest-api-jackson - example of the RESTFul API, custom Jackson parser configuration
@@ -120,7 +97,7 @@
 - 8_rest-api-responsebodyemitter - example of response body emitter in controller for async (beneficial browser). Reduce the browser waiting time.
 - 9_rest-api-sseemitter - example of server sent event in controller for async (beneficial to browser). Reduce the browser waiting time. Response is as stream back to browser 1 by 1
 
-## spring-boot-2-test-by-howtodoinjava
+### spring-boot-2-test-by-howtodoinjava
 
 - 1_test-springboot - example of creating the test client, mock response for RestTemplate
   - @SpringBootTest
@@ -143,12 +120,10 @@
   - Disable full auto-configuration, focus on @Controller
   - @Import (for service), WebTestClient (WebFlux web client), @MockBean (similar @Bean)
 
---------------------------------------------------------------------------------
-
-# 查看SprintBoot
+## Get Sprint Boot Information
 
 `curl https://start.spring.io > springboot.md`
 
-# Execute all tests in repo
+## Execute all tests in repo
 
 `/bin/bash run-repo-test.sh`
