@@ -1,14 +1,6 @@
-# spring-boot-2
-
 ![](https://img.shields.io/badge/language-java-blue)
 ![](https://img.shields.io/badge/technology-spring%20boot-blue)
 ![](https://img.shields.io/badge/development%20year-2020-orange)
-
-![](https://img.shields.io/github/languages/top/shijiansu/spring-boot-2)
-![](https://img.shields.io/github/languages/count/shijiansu/spring-boot-2)
-![](https://img.shields.io/github/languages/code-size/shijiansu/spring-boot-2)
-![](https://img.shields.io/github/repo-size/shijiansu/spring-boot-2)
-![](https://img.shields.io/github/last-commit/shijiansu/spring-boot-2?color=red)
 
 ## Outline
 
